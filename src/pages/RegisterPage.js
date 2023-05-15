@@ -5,6 +5,9 @@ const RegisterPage = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
+    /**
+     * @param {Event} event 
+     */
     const register = async (event) => {
         event.preventDefault()
 

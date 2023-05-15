@@ -9,6 +9,9 @@ const LoginPage = () => {
     const [redirect, setRedirect] = useState(false)
     const { setUserInfo } = useContext(UserContext)
 
+    /**
+     * @param {Event} event 
+     */
     const login = async (event) => {
         event.preventDefault()
 
@@ -21,10 +24,9 @@ const LoginPage = () => {
             })
 
             if (response.status === 200) {
-                response.json().then(userInfo => {
-                    setUserInfo(userInfo)
-                    setRedirect(true)
-                })
+                const data = await response.json()
+                setUserInfo(data)
+                setRedirect(true)
             } else {
                 alert("Login failed.")
             }
