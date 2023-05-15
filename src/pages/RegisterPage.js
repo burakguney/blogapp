@@ -5,7 +5,7 @@ const RegisterPage = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    async function register(event) {
+    const register = async (event) => {
         event.preventDefault()
 
         try {
@@ -16,9 +16,9 @@ const RegisterPage = () => {
             })
 
             if (response.status === 201) {
-                alert('registration successful')
+                alert('register successful')
             } else {
-                alert('registration failed')
+                alert('register failed')
             }
         } catch (error) {
             console.log(error)
