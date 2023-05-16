@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { UserContext } from './UserContext'
+import { UserContext } from '../contexts/UserContext'
 
 const Header = () => {
 
@@ -21,7 +21,6 @@ const Header = () => {
             credentials: 'include',
             method: 'POST'
         })
-
         setUserInfo('')
     }
 
